@@ -1,17 +1,25 @@
-import React from 'react'
-import baby from '../images/baby_shoe.png';
+import React, { useEffect, useState } from 'react';
 import Card from './Card';
 import more from '../images/angle-right-solid.svg';
+import {Link} from 'react-router-dom';
 function BabySection() {
+  const [data,setData] = useState([]);
+  useEffect(()=>{
+    fetch(`http://localhost:4000/products/baby`)
+    .then((response) => response.json())
+    .then((actualData) => setData(actualData))
+    .catch((err) => {
+     console.log(err.message);
+    });
+  },[])
   return (
     <div class="container">
-    <Card src={baby}/>
-    <Card src={baby}/>
-    <Card src={baby}/>
-    <Card src={baby}/>
-    <Card src={baby}/>
-    <Card src={baby}/>
-    <button className="show_more">Show More<img src={more} alt="more" /></button>
+     {
+      data.map((item)=>(
+        <Card src={item.productImage} name={item.productName} avialable={item.productAvialable} size={item.sizeOfProduct} price={item.priceOfProduct} Id={item._id} key={item?._id}/>
+      ))
+    }
+    <Link to="/baby"><button className="show_more">Show More<img src={more} alt="more" /></button></Link>
   </div>
   )
 }

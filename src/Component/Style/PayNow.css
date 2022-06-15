@@ -1,0 +1,22 @@
+.pay_now{
+    display: flex;
+    justify-content:center;
+    margin:1rem;
+}
+
+.pay_now button{
+    padding:0.75rem 3rem;
+    background-color: #170b1d;
+    color: white;
+    font-weight:400;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.pay_now button:hover{
+   background-color:#b8b2b2;
+   border: 1px solid #000;
+   color: #000;
+   font-weight:600;
+}

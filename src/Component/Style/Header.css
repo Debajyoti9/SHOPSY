@@ -35,6 +35,8 @@ html{
 .logoWrapper{
   display: flex;
   align-items: center;
+  color: #111;
+  cursor: pointer;
 }
 
 .logoIcon{
@@ -58,11 +60,11 @@ html{
 .navLink li a{
   display: inline-block;
   text-decoration: none;
-  text-transform: uppercase;
+  text-transform: capitalize;
   align-items: center;
   text-align: center;
   font-weight: 500;
-  font-size: .95em;
+  font-size: 1em;
   color: #000;
 }
 .navLink li .validation{

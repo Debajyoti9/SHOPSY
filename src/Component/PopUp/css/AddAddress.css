@@ -1,0 +1,60 @@
+.add_address {
+    position: absolute;
+    top: 14%;
+    width: 47%;
+    height: 80vh;
+    box-sizing: border-box;
+    background-color: #463D3D;
+    box-shadow: inset 0 0 490px rgb(35, 35, 36);
+}
+
+.new_address {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 1rem 0;
+    margin-left: 2rem;
+}
+
+.new_address label {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0.8rem 0;
+}
+
+.new_address input {
+    width: 90%;
+    padding: 0.8rem;
+    outline: none;
+    border: 2px solid #000;
+}
+
+.btn_add {
+    width: 40%;
+    padding: 0.6rem;
+    margin: 3.5rem auto;
+    background-color: #e74d4d;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    outline: none;
+    cursor: pointer;
+}
+
+.close_btn {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    color: #fff;
+    background: #aa0202;
+    width: 4.5rem;
+    height: 2rem;
+    outline: none;
+    border: none;
+    font-size: 1.2rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+}

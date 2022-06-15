@@ -1,5 +1,6 @@
 import React from 'react';
 import './Style/Blog.css';
+import {Link} from 'react-router-dom';
 function Blog() {
   return (
     <div class="b_card">
@@ -15,8 +16,8 @@ function Blog() {
                 <h3>
                    Blog Heading
                 </h3>
-                <p>This is where I network and build my professional protfolio.
-                <a href="#e" target="_blank" rel="noopener noreferrer">Read More</a>
+                <p>This is where I network and build professionalprotfolio.
+                <Link to='/blogDetails'><a href="#e" target="_blank" rel="noopener noreferrer">Read More</a></Link>
                 </p>
             </div>
         </div>
@@ -24,4 +25,4 @@ function Blog() {
   )
 }
 
-export default Blog
+export default Blog;

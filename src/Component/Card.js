@@ -1,30 +1,26 @@
 import React from 'react'
 import './Style/Card.css'
-function Card({src}) {
+import {Link} from 'react-router-dom';
+function Card({src,name,price,Id,size}) {
   return (
     <div class="card">
     <div class="imgBx">
       <img src={src} alt="shoe"/>
     </div>
     <div class="contentBx">
-      <h2>Nike Shoes</h2>
+      <h2>{name}</h2>
       <div class="size">
         <h3>Size :</h3>
-        <span>7</span>
-        <span>8</span>
-        <span>9</span>
-        <span>10</span>
+        {size[0].map((sz)=><span>{sz}</span>)}
       </div>
-      <div class="color">
-        <h3>Color :</h3>
-        <span></span>
-        <span></span>
-        <span></span>
+      <div class="price">
+        <h3>Price :</h3>
+        <span>{price}</span>
       </div>
-      <a href="#b">Buy Now</a>
+      <Link to={`/productDetails/${Id}`}><a href="#b">Buy Now</a></Link>
     </div>
   </div>
   )
 }
 
-export default Card
+export default Card;

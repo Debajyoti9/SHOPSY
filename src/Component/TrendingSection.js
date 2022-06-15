@@ -1,19 +1,26 @@
-import React from 'react';
-import baby from '../images/baby_shoe.png';
-import more from '../images/angle-right-solid.svg';
-import womenfashion from '../images/shoe.png';
+import React, { useEffect, useState } from 'react';
 import Card from './Card';
+import more from '../images/angle-right-solid.svg';
+import {Link} from 'react-router-dom';
 function TrendingSection() {
+  const [data,setData] = useState([]);
+  useEffect(()=>{
+    fetch(`http://localhost:4000/products/trending`)
+    .then((response) => response.json())
+    .then((actualData) => setData(actualData))
+    .catch((err) => {
+     console.log(err.message);
+    });
+  },[])
   return (
     <div class="container">
-    <Card src={baby}/>
-    <Card src={womenfashion}/>
-    <Card src="https://assets.codepen.io/4164355/shoes.png"/>
-    <Card src="https://assets.codepen.io/4164355/shoes.png"/>
-    <Card src={baby}/>
-    <Card src={womenfashion}/>
+   {
+      data.map((item)=>(
+        <Card src={item.productImage} name={item.productName} avialable={item.productAvialable} size={item.sizeOfProduct} price={item.priceOfProduct} Id={item._id} key={item?._id}/>
+      ))
+    }
     
-    <button className="show_more">Show More<img src={more} alt="more" /></button>
+    <Link to="/trending"><button className="show_more">Show More<img src={more} alt="more" /></button></Link>
   </div>
   )
 }

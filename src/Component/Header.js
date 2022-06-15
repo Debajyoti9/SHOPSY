@@ -3,16 +3,18 @@ import Home from './Home';
 import Section from './Section';
 import './Style/Header.css';
 import logo from '../images/shop-solid.svg';
-import login from '../images/arrow-right-to-bracket-solid.svg';
+// import login from '../images/arrow-right-to-bracket-solid.svg';
 import Sign_up from '../images/user-plus-solid.svg';
+import {Link} from 'react-router-dom';
 function Header() {
   return (
       <>
     <nav class="navBarWrapper" id="navBarWrapper">
-      <div class="logoWrapper">
+      <Link to="/" style={{ textDecoration: 'none' }}><div class="logoWrapper">
          <img src={logo} class="logoIcon" alt="logo"/>
-      <div class="logo">SHOPSY</div>
+      <div class="logo">SHOPEE</div>
       </div>
+      </Link>
   <div class="menuIconWrapper" id="menuIconWrapper">
   </div>
   <ul class="navLink" id="navBar">
@@ -23,8 +25,7 @@ function Header() {
     <li class="linkSelect"><a href="#Trending" class="link">Trending</a></li>
     <li class="linkSelect"><a href="#Blogs" class="link">Blogs</a></li>
     <li class="linkSelect"><a href="#Contact" class="link">Contact</a></li>
-    <li class="linkSelect"><a href="#Login" class="link validation"><img src={login} alt="login"/> Login</a></li>
-    <li class="linkSelect"><a href="#SignUp" class="link validation"><img src={Sign_up} alt="Signup"/> Sign Up</a></li>
+    <Link to="/login"><li class="linkSelect"><a href="#Login" class="link validation"><img src={Sign_up} alt="login"/> Sign Up</a></li></Link>
   </ul>
   </nav>
   <Home id="Home"/>
@@ -38,4 +39,4 @@ function Header() {
   )
 }
 
-export default Header
+export default Header;
