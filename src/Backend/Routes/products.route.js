@@ -1,14 +1,14 @@
 const productController = require("../Controllers/products.controller");
-const express = require("express");
-const router = express.Router();
 
-router.get("/products", productController.getProducts);
-router.post("/products", productController.addProducts);
-router.post("/products/:id/:status", productController.updateProductStatus);
-router.get("/products/:id/:status", productController.getApprovedProducts);
-router.get("/products/men", productController.getMenProducts);
-router.get("/products/women", productController.getWomenProducts);
-router.get("/products/baby", productController.getBabyProducts);
-router.get("products/trending", productController.getTrendingProducts);
-
-module.exports = router;
+module.exports = function (app) {
+  app
+    .get("/products", productController.getProducts)
+    .post("/products", productController.addProducts);
+  app
+    .get("/products/:id/:status", productController.getApprovedProducts)
+    .post("/products/:id/:status", productController.updateProductStatus);
+  app.get("/products/men", productController.getMenProducts);
+  app.get("/products/women", productController.getWomenProducts);
+  app.get("/products/baby", productController.getBabyProducts);
+  app.get("products/trending", productController.getTrendingProducts);
+};

@@ -26,18 +26,9 @@ mongoose.set("strictQuery", true);
 mongoose.connect("mongodb://127.0.0.1:27017/vendorDB");
 
 //routing
-app.use("/products", productRouter);
-app.use("/products/:id/:status", productRouter);
-app.use("/products/men", productRouter);
-app.use("/products/women", productRouter);
-app.use("/products/baby", productRouter);
-app.use("products/trending", productRouter);
-app.use("/cartItems", cartRouter);
-app.use("/cartItems/:id", cartRouter);
-app.use("/create-order", ordersRouter);
-app.use("/get-razorpay-key", ordersRouter);
-app.use("/pay-order", ordersRouter);
-app.use("/list-orders", ordersRouter);
+productRouter(app);
+cartRouter(app);
+ordersRouter(app);
 
 //connect to PORT
 const port = process.env.PORT || 4000;
