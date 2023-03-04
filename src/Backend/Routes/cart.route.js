@@ -2,6 +2,7 @@ const cartController = require("../Controllers/cart.controller");
 
 module.exports = function (app) {
   app.get("/cartItems", cartController.getCartItemsController);
+  app.get("/products/:id", cartController.getProductInCart);
   app
     .get("/cartItems/:id", cartController.getCartItemController)
     .post("/cartItems/:id", cartController.addToCartController)

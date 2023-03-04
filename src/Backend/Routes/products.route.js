@@ -10,5 +10,5 @@ module.exports = function (app) {
   app.get("/products/men", productController.getMenProducts);
   app.get("/products/women", productController.getWomenProducts);
   app.get("/products/baby", productController.getBabyProducts);
-  app.get("products/trending", productController.getTrendingProducts);
+  app.get("/products/trending", productController.getTrendingProducts);
 };
